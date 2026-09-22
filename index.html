@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Fahrplan A1 bis B2 — CEFR-vollständig, ab 22. September 2026</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%87%A9%F0%9F%87%AA%3C/text%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light dark;
+  --c-bg:240 243 245; --c-panel:255 255 255; --c-panel-alt:251 249 247;
+  --c-text:26 26 26; --c-border:215 220 224; --c-muted:74 82 96;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --c-bg:17 19 22; --c-panel:28 31 36; --c-panel-alt:38 33 29; --c-text:230 233 236; --c-border:60 66 74; --c-muted:168 176 186; }
+}
+*{box-sizing:border-box;}
+html,body{background:rgb(var(--c-bg));}
+body{margin:0;font-family:'Inter',Arial,'Helvetica Neue',sans-serif;color:rgb(var(--c-text));line-height:1.55;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);}
+::selection{background:#EC0016;color:#fff;}
+*:focus-visible{outline:3px solid rgb(var(--c-text));outline-offset:2px;}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px;}
+header.top{position:sticky;top:0;top:env(safe-area-inset-top,0px);z-index:50;background:rgb(var(--c-panel));border-bottom:1px solid rgb(var(--c-border));}
+header.top .bar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:8px;}
+.brand{font-size:1.3rem;font-weight:800;color:#EC0016;letter-spacing:-.02em;}
+.brand span{color:rgb(var(--c-text));font-weight:700;}
+nav.tabs{display:flex;gap:4px;overflow-x:auto;padding-bottom:2px;}
+nav.tabs a{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:rgb(var(--c-muted));
+  text-decoration:none;padding:8px 10px;white-space:nowrap;border-bottom:2px solid transparent;}
+nav.tabs a:hover, nav.tabs a.active{color:#EC0016;border-bottom-color:#EC0016;}
+.hero{background:rgb(var(--c-panel));border-bottom:1px solid rgb(var(--c-border));padding:34px 0 40px;}
+.eyebrow{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#EC0016;margin-bottom:8px;}
+h1{font-size:1.7rem;font-weight:800;margin:0 0 10px;max-width:38ch;letter-spacing:-.02em;}
+.lede{font-size:14.5px;max-width:62ch;margin:0 0 8px;}
+.lede.muted{color:rgb(var(--c-muted));font-size:13px;}
+.callout{background:rgb(var(--c-panel-alt));border:1px solid rgb(var(--c-border));border-left:4px solid #EC0016;padding:14px 16px;margin-top:16px;font-size:13.5px;}
+.card{background:rgb(var(--c-panel));border:1px solid rgb(var(--c-border));box-shadow:0 2px 10px rgba(0,0,0,.06);padding:18px;margin-top:20px;}
+.grid3{display:grid;grid-template-columns:1fr;gap:12px;}
+@media(min-width:700px){.grid3{grid-template-columns:1fr 1fr auto;align-items:end;}}
+label{display:block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;margin-bottom:5px;}
+select,input[type=text]{width:100%;padding:10px 11px;font-size:14.5px;border:1px solid rgb(var(--c-border));background:rgb(var(--c-panel));color:rgb(var(--c-text));border-radius:0;}
+select:focus,input:focus{border-color:#EC0016;outline:none;}
+button.primary{background:#EC0016;color:#fff;font-weight:700;font-size:14.5px;padding:12px 22px;border:none;cursor:pointer;width:100%;}
+@media(min-width:700px){button.primary{width:auto;}}
+button.primary:hover{background:#C60012;}
+section.stats{max-width:960px;margin:26px auto;padding:0 16px;}
+.statgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgb(var(--c-border));border:1px solid rgb(var(--c-border));}
+@media(min-width:700px){.statgrid{grid-template-columns:repeat(4,1fr);}}
+.statbox{background:rgb(var(--c-panel));padding:14px;}
+.statbox .l{font-size:11px;font-weight:800;text-transform:uppercase;color:rgb(var(--c-muted));margin-bottom:4px;}
+.statbox .v{font-size:1.15rem;font-weight:800;}
+.statbox .v.red{color:#EC0016;}
+main.board{max-width:960px;margin:0 auto 90px;padding:0 16px;}
+.boardhead{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:10px;}
+.boardhead h2{font-size:1.05rem;font-weight:800;margin:0;}
+.link-btn{font-size:12.5px;font-weight:700;color:rgb(var(--c-muted));background:none;border:none;cursor:pointer;text-decoration:underline;text-underline-offset:2px;}
+.link-btn:hover{color:#EC0016;}
+#board{border-top:1px solid rgb(var(--c-border));}
+details.day{border:1px solid rgb(var(--c-border));border-top:none;background:rgb(var(--c-panel));}
+details.day summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+details.day summary::-webkit-details-marker{display:none;}
+.date-box{width:96px;flex-shrink:0;}
+.date-box .k{font-size:10.5px;font-weight:800;text-transform:uppercase;color:rgb(var(--c-muted));}
+.date-box .d{font-size:15px;font-weight:800;}
+.tag{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.02em;padding:4px 8px;border:1px solid rgb(var(--c-border));color:rgb(var(--c-muted));flex-shrink:0;}
+.tag.done{background:rgb(var(--c-text));color:rgb(var(--c-panel));border-color:rgb(var(--c-text));}
+.tag.cefr{background:#EC0016;color:#fff;border-color:#EC0016;}
+.topic{flex:1;min-width:180px;font-size:14px;font-weight:700;}
+.chev{width:12px;height:12px;flex-shrink:0;transition:transform .15s;color:#EC0016;}
+details[open] .chev{transform:rotate(180deg);}
+.tracks{padding:6px 16px 8px;display:grid;grid-template-columns:1fr;gap:10px;}
+@media(min-width:700px){.tracks{grid-template-columns:1fr 1fr;}}
+.track{display:flex;gap:10px;align-items:flex-start;border:1px solid rgb(var(--c-border));padding:10px;cursor:pointer;}
+.track:hover{border-color:rgb(var(--c-text));}
+.track.done .ttext{color:rgb(var(--c-muted));text-decoration:line-through;}
+.track input{width:16px;height:16px;accent-color:#EC0016;margin-top:2px;flex-shrink:0;}
+.tlabel{display:block;font-size:10px;font-weight:800;text-transform:uppercase;color:#EC0016;margin-bottom:2px;}
+.ttext{display:block;font-size:13px;line-height:1.4;}
+.tsrc{display:block;font-size:11px;font-style:italic;color:rgb(var(--c-muted));margin-top:4px;}
+.reschedule-row{padding:2px 16px 16px;}
+.resched-btn{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.02em;background:none;border:1px solid rgb(var(--c-border));color:rgb(var(--c-muted));padding:8px 12px;cursor:pointer;}
+.resched-btn:hover{border-color:#EC0016;color:#EC0016;}
+.special{border:1px solid rgb(var(--c-border));border-top:none;border-left:4px solid rgb(var(--c-muted));background:rgb(var(--c-panel-alt));padding:14px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.special.holiday{border-left-color:#0D8F5F;}
+.special.reise{border-left-color:#EC0016;}
+.special .lbl{flex:1;min-width:180px;font-size:13.5px;font-weight:600;color:rgb(var(--c-muted));}
+.cefrtable{width:100%;border-collapse:collapse;font-size:13px;margin-top:14px;}
+.cefrtable th,.cefrtable td{border:1px solid rgb(var(--c-border));padding:10px;text-align:left;vertical-align:top;}
+.cefrtable th{background:rgb(var(--c-panel-alt));font-size:11px;text-transform:uppercase;letter-spacing:.02em;}
+.cefrtable td.skill{font-weight:800;font-size:11px;text-transform:uppercase;color:#EC0016;white-space:nowrap;}
+footer.site{border-top:1px solid rgb(var(--c-border));background:rgb(var(--c-panel));}
+footer.site .wrap{padding:22px 16px;font-size:12px;color:rgb(var(--c-muted));}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap bar">
+    <div class="brand">DB <span>A1&ndash;B2</span></div>
+    <nav class="tabs">
+      <a href="#fahrplan" id="nav-fahrplan" class="active">Fahrplan</a>
+      <a href="#fortschritt" id="nav-fortschritt">Fortschritt</a>
+      <a href="#cefr-ref" id="nav-cefr">CEFR-Referenz</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Neu geplant &middot; Sprint A1 &rarr; A2 &rarr; B1 &rarr; B2</p>
+    <h1>Dein Fahrplan von den Grundlagen bis zur B2-Prüfung</h1>
+    <p class="lede">Start morgen, <b>23. September 2026</b>, Ziel weiterhin Ende Januar 2027 &ndash; Februar bleibt komplett frei für FILTERS. <b>Neu gerechnet:</b> 23 der A1/A2/B1-Grundlagenpaare (Einführung + Wiederholung desselben Grammatikpunkts) sind jetzt zu einem „Kombitag" zusammengelegt, und die Ruhetage stehen jetzt alle 14 statt alle 11 Tage. Damit passt der komplette Plan (118 Einträge) mit 3 Tagen Puffer bis zum 28. Januar &ndash; ohne Überlauf in den Februar.</p>
+    <p class="lede muted" id="range-info">Lädt...</p>
+    <div class="callout">
+      <b>Rechnerisch geprüft:</b> 131 Kalendertage (23.9.&ndash;31.1.) minus 10 Ruhetage/Feiertage = 121 Studientage für 118 Einträge. Ein „Kombitag" (zwei Grammatikpunkte an einem Tag, aber mit nur einem konsolidierten Wortschatz-, Schreib- und Hör-Block statt zwei) dauert realistisch <b>85&ndash;100 Minuten</b>, ein normaler Eintrag <b>60&ndash;80 Minuten</b> &ndash; beides passt bequem in einen 3-Stunden-Deutsch-Slot, auch mit Puffer für einen schlechten Tag. Ein Kompromiss dabei: die zusammengelegten Punkte werden am selben Tag statt an zwei getrennten Tagen wiederholt, was die Gedächtnisspanne zwischen erstem Lernen und Wiederholung verkürzt &ndash; für bereits vertraute A1/A2-Grundlagen ein sinnvoller Tausch, für neuen B1/B2-Stoff wurde deshalb nicht gekürzt.
+    </div>
+    <div class="callout">
+      Trotzdem gilt: erst unten die Tage/Aufgaben anhaken, die du schon wirklich draufhast, dann bei einem Eintrag auf <b>„Neu planen"</b> klicken, damit alles Offene ab morgen neu verteilt wird.
+    </div>
+    <div class="card">
+      <div class="grid3">
+        <div>
+          <label for="kategorie">Kategorie</label>
+          <select id="kategorie">
+            <option value="Alle">Alle Einträge</option>
+            <option value="Grundlagen (A1-A2)">Etappe 1: Grundlagen (A1-A2)</option>
+            <option value="B1-Aufbau">Etappe 1: B1-Aufbau</option>
+            <option value="B1-Finale">Etappe 1: Finale</option>
+            <option value="B2-Aufbau">Etappe 2: B2-Aufbau</option>
+            <option value="B2-Prüfungstraining">Etappe 2: Prüfungstraining</option>
+            <option value="Feiertag">Feiertage / Frei</option>
+            <option value="Ruhetag">Ruhetage (fest eingeplant)</option>
+          </select>
+        </div>
+        <div>
+          <label for="datum">Datum</label>
+          <input id="datum" type="text" placeholder="z. B. 13.10 oder November">
+        </div>
+        <button id="search-btn" class="primary">Einträge suchen</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats" id="fortschritt">
+  <div class="statgrid">
+    <div class="statbox"><div class="l">Heute</div><div class="v" id="stat-today">–</div></div>
+    <div class="statbox"><div class="l">Aufgaben erledigt</div><div class="v" id="stat-tasks">0 / 0</div></div>
+    <div class="statbox"><div class="l">Fortschritt</div><div class="v red" id="stat-pct">0%</div></div>
+    <div class="statbox"><div class="l">Aktuelle Stufe</div><div class="v" id="stat-station">A1.1</div></div>
+  </div>
+</section>
+
+<main class="board" id="fahrplan">
+  <div class="boardhead">
+    <h2>Verbindungen &middot; <span id="result-count">0</span> Einträge</h2>
+    <button id="reset-btn" class="link-btn">Fortschritt zurücksetzen</button>
+  </div>
+  <div id="board"></div>
+</main>
+
+<section id="cefr-ref" class="wrap" style="max-width:960px;margin:0 auto 70px;">
+  <h2 style="font-size:1.05rem;font-weight:800;">CEFR-Referenz (Europarat-Raster, A1&ndash;B2)</h2>
+  <p class="lede muted">Das hier ist die eigentliche Grundlage, an der der ganze Fahrplan hängt: der offizielle Selbsteinschätzungsraster des Europarats, in eigenen Worten zusammengefasst. Wenn du bei einem Checkpoint unsicher bist, schau hier nach, was die jeweilige Stufe wirklich verlangt.</p>
+  <div style="overflow-x:auto;">
+  <table class="cefrtable">
+    <thead><tr><th>Fertigkeit</th><th>A1</th><th>A2</th><th>B1</th><th>B2</th></tr></thead>
+    <tbody>
+      <tr><td class="skill">Hören</td>
+        <td>Vertraute Wörter und ganz einfache Sätze verstehen, wenn langsam und deutlich gesprochen wird.</td>
+        <td>Häufige Wörter/Wendungen zu Alltagsthemen verstehen; Kernpunkt kurzer, klarer Durchsagen erfassen.</td>
+        <td>Hauptpunkte von klarer Standardsprache zu vertrauten Themen verstehen; Wesentliches aus langsamem Radio/TV.</td>
+        <td>Längeren Vorträgen und komplexeren Argumenten folgen, wenn das Thema vertraut ist; die meisten Nachrichten/Filme verstehen.</td>
+      </tr>
+      <tr><td class="skill">Lesen</td>
+        <td>Vertraute Namen, Wörter und ganz einfache Sätze verstehen, z. B. auf Schildern.</td>
+        <td>Kurze, einfache Texte lesen; gezielt Informationen in Alltagsmaterial finden; einfache private Briefe verstehen.</td>
+        <td>Texte aus gebräuchlicher Alltags-/Berufssprache verstehen; Gefühle/Wünsche in privaten Briefen nachvollziehen.</td>
+        <td>Artikel/Berichte zu aktuellen Themen mit Standpunkten lesen; zeitgenössische literarische Prosa verstehen.</td>
+      </tr>
+      <tr><td class="skill">Sprechen (Interaktion)</td>
+        <td>Einfach interagieren, wenn die andere Person langsam spricht und hilft.</td>
+        <td>In einfachen Routineaufgaben direkt Informationen austauschen; kurze soziale Gespräche führen.</td>
+        <td>Die meisten Reisesituationen bewältigen; unvorbereitet an Gesprächen zu vertrauten Themen teilnehmen.</td>
+        <td>Spontan und fließend genug sprechen für normale Gespräche mit Muttersprachlern; aktiv diskutieren und Standpunkte begründen.</td>
+      </tr>
+      <tr><td class="skill">Sprechen (Produktion)</td>
+        <td>Mit einfachen Sätzen beschreiben, wo man wohnt und wen man kennt.</td>
+        <td>Mit mehreren Sätzen Familie, Wohnsituation, Ausbildung und aktuellen Job beschreiben.</td>
+        <td>Erlebnisse, Träume, Hoffnungen zusammenhängend beschreiben; kurz Gründe/Erklärungen geben; eine Handlung nacherzählen.</td>
+        <td>Klare, detaillierte Darstellungen zu Themen aus dem eigenen Interessengebiet geben; einen Standpunkt mit Vor-/Nachteilen erläutern.</td>
+      </tr>
+      <tr><td class="skill">Schreiben</td>
+        <td>Eine kurze Postkarte schreiben; ein Formular mit persönlichen Daten ausfüllen.</td>
+        <td>Kurze Notizen/Mitteilungen schreiben; einen ganz einfachen persönlichen Brief (z. B. Dank) verfassen.</td>
+        <td>Einfache, zusammenhängende Texte zu vertrauten Themen schreiben; Erfahrungen/Eindrücke in Briefen schildern.</td>
+        <td>Klare, detaillierte Texte zu vielen Themen schreiben, z. B. einen Aufsatz/Bericht mit Argumenten für/gegen eine Position.</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="lede muted" style="margin-top:10px;">Eigene Zusammenfassung auf Basis des Council of Europe / Europass CEFR-Selbsteinschätzungsrasters (2004&ndash;2020).</p>
+
+  <h2 style="font-size:1.05rem;font-weight:800;margin-top:34px;">Goethe/telc-Prüfungsformat je Stufe</h2>
+  <p class="lede muted">Das ist der eigentliche Prüfungsaufbau, auf den dieser Fahrplan hinarbeitet &ndash; Module, ungefähre Dauer und Aufgabentyp. Goethe und telc prüfen dieselben CEFR-Stufen mit leicht unterschiedlichem Format, aber überlappenden Themen; die Werte unten beziehen sich auf das Goethe-Zertifikat (die aktuell öffentlich am besten dokumentierte Quelle), telc-Prüfungen sind sehr ähnlich aufgebaut.</p>
+  <div style="overflow-x:auto;">
+  <table class="cefrtable">
+    <thead><tr><th>Modul</th><th>A1 (Start Deutsch 1 / Fit 1)</th><th>A2</th><th>B1</th><th>B2</th></tr></thead>
+    <tbody>
+      <tr><td class="skill">Hören</td>
+        <td>Kurze Ansagen, einfache Alltagsdialoge; ca. 20 Min.</td>
+        <td>Alltagsgespräche und kurze Durchsagen; ca. 30 Min.</td>
+        <td>Ansagen, Kurzvorträge, informelle Gespräche, Radiodiskussionen; ca. 40 Min.</td>
+        <td>Interviews, Vorträge, Alltags- und Radiogespräche; ca. 30–40 Min.</td>
+      </tr>
+      <tr><td class="skill">Lesen</td>
+        <td>Schilder, kurze Anzeigen, einfache Texte; ca. 25 Min.</td>
+        <td>Kurze Alltagstexte, private Mitteilungen; ca. 30 Min.</td>
+        <td>Blogbeiträge, E-Mails, Zeitungsartikel, Anzeigen; ca. 65 Min.</td>
+        <td>Forenbeiträge, Zeitungsartikel, Kommentare, Vorschriften; ca. 65–80 Min.</td>
+      </tr>
+      <tr><td class="skill">Schreiben</td>
+        <td>Formular ausfüllen, ganz kurze Mitteilung; ca. 20 Min.</td>
+        <td>Kurze persönliche Mitteilung/Brief; ca. 30 Min.</td>
+        <td>Private + formelle E-Mail, Meinungsbeitrag im Forum; ca. 60 Min.</td>
+        <td>Meinungsbeitrag im Forum zu Gesellschaftsthema + formelle berufliche Nachricht; ca. 75 Min.</td>
+      </tr>
+      <tr><td class="skill">Sprechen</td>
+        <td>Sich vorstellen, einfache Fragen stellen/beantworten; ca. 15 Min.</td>
+        <td>Alltagsdialog, gemeinsam etwas planen; ca. 15 Min.</td>
+        <td>Gemeinsam etwas planen, Meinung äußern, Kurzpräsentation + Fragen; ca. 15 Min.</td>
+        <td>Kurzvortrag zu vorgegebenem Thema + Diskussion mit Argumentaustausch; ca. 15 Min.</td>
+      </tr>
+      <tr><td class="skill">Offizielle Pflichtthemen (Auszug)</td>
+        <td>Familie, Zahlen, Berufe, Länder, Wochentage, Uhrzeit, Farben, Feiertage</td>
+        <td>Wohnen, Einkaufen, Freizeit, Körper/Gesundheit, Reisen, Arbeit</td>
+        <td>Personalien, Wohnen, Umwelt, Reisen/Verkehr, Verpflegung, Einkaufen, Dienstleistungen, Körper/Gesundheit/Hygiene, Wahrnehmung/Motorik, Arbeit/Beruf, Ausbildung/Schule, Fremdsprachen, Freizeit, persönliche Beziehungen</td>
+        <td>Gesellschaftliche Streitthemen, Beruf/Karriere, Bildung, Wissenschaft, Umwelt, Medien, Kultur (breiter, meinungsbasierter Wortschatz)</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="lede muted" style="margin-top:10px;">Die B1-Pflichtthemen-Zeile ist die offizielle Themenliste aus der Goethe-Zertifikat-B1-Wortliste (14 Themenbereiche) &ndash; alle 14 sind jetzt im Fahrplan als eigene Wortschatz-Einträge oder Durchgänge vertreten, inklusive der drei, die im alten Plan fehlten: Wahrnehmung/Motorik, Fremdsprachen, Dienstleistungen (neu ergänzt als GB1-1/2/3, direkt vor der B1-Finale-Phase).</p>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    Quellen: YourGermanTeacher, Nicos Weg (DW), Easy German, Slow German Podcast, Deutschlandfunk, DeutschlernerBlog, Duolingo, Goethe/telc B1+B2-Modelltests, CEFR-Selbsteinschätzungsraster (Europarat/Europass). Fortschritt &amp; Terminplan werden lokal in diesem Browser gespeichert.
+  </div>
+</footer>
+
+<script>
+const ITEMS = [
+{id:"A1M",phase:"Grundlagen (A1-A2)",station:"A2.2",topic:"Kombitag: Präsens & Personalpronomen (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Präsens & Personalpronomen — direkt danach vertiefen: Wiederholung & Vertiefung: Präsens & Personalpronomen",src:"YourGermanTeacher – a1.1 grammar"},{key:"v",label:"Wortschatz",text:"Begrüßung & Alltag (Durchgang 1) + Familie & Wohnen (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Präsens & Personalpronomen“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Präsens & Personalpronomen“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg A1 (DW) (optional zusätzlich: Nicos Weg A2 (DW))",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A3M",phase:"Grundlagen (A1-A2)",station:"A2.2",topic:"Kombitag: W-Fragen & Satzstellung (Verb Pos. 2) (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: W-Fragen & Satzstellung (Verb Pos. 2) — direkt danach vertiefen: Wiederholung & Vertiefung: W-Fragen & Satzstellung (Verb Pos. 2)",src:"YourGermanTeacher – a1.1 grammar"},{key:"v",label:"Wortschatz",text:"Essen & Trinken (Durchgang 1) + Tagesablauf & Uhrzeit (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „W-Fragen & Satzstellung“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „W-Fragen & Satzstellung“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Easy German (optional zusätzlich: Nicos Weg B1 (DW))",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A5M",phase:"Grundlagen (A1-A2)",station:"A2.2",topic:"Kombitag: Artikel: bestimmt/unbestimmt + Nominativ/Akkusativ (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Artikel: bestimmt/unbestimmt + Nominativ/Akkusativ — direkt danach vertiefen: Wiederholung & Vertiefung: Artikel: bestimmt/unbestimmt + Nominativ/Akkusativ",src:"YourGermanTeacher – a1.1 grammar"},{key:"v",label:"Wortschatz",text:"Mixed-Review (High-Frequency Wörter A1+A2) (Durchgang 1) + Arbeit & Beruf (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „bestimmt/unbestimmt + Nominativ/Akkusativ“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „bestimmt/unbestimmt + Nominativ/Akkusativ“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens) (optional zusätzlich: Nicos Weg A1 (DW))",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A8M",phase:"Grundlagen (A1-A2)",station:"A2.2",topic:"Kombitag: Modalverben – Grundformen (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Modalverben – Grundformen — direkt danach vertiefen: Wiederholung & Vertiefung: Modalverben – Grundformen",src:"YourGermanTeacher – a1.2 grammar"},{key:"v",label:"Wortschatz",text:"Vergangenheit erzählen (Ereignisse, Urlaub) (Durchgang 1) + Zukunftspläne & Wünsche (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Modalverben“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Modalverben“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg A2 (DW) (optional zusätzlich: Easy German)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A10M",phase:"Grundlagen (A1-A2)",station:"A2.2",topic:"Kombitag: Possessivartikel & Präpositionen (Akk./Dat.) (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Possessivartikel & Präpositionen (Akk./Dat.) — direkt danach vertiefen: Wiederholung & Vertiefung: Possessivartikel & Präpositionen (Akk./Dat.)",src:"YourGermanTeacher – a1.2 grammar"},{key:"v",label:"Wortschatz",text:"Gefühle & Meinungen (Durchgang 1) + Wetter & Jahreszeiten (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Possessivartikel & Präpositionen“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Possessivartikel & Präpositionen“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (DW) (optional zusätzlich: Slow German Podcast (Annik Rubens))",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A12M",phase:"Grundlagen (A1-A2)",station:"A2.2",topic:"Kombitag: Imperativ (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Imperativ — direkt danach vertiefen: Wiederholung & Vertiefung: Imperativ",src:"YourGermanTeacher – a1.2 grammar"},{key:"v",label:"Wortschatz",text:"Nachrichten & Medien (Durchgang 1) + Gesundheit & beim Arzt (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Imperativ“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Imperativ“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg A1 (DW) (optional zusätzlich: Nicos Weg A2 (DW))",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A15M",phase:"Grundlagen (A1-A2)",station:"A2.2",topic:"Kombitag: Perfekt (haben/sein + Partizip II) (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Perfekt (haben/sein + Partizip II) — direkt danach vertiefen: Wiederholung & Vertiefung: Perfekt (haben/sein + Partizip II)",src:"YourGermanTeacher – a2.1 grammar"},{key:"v",label:"Wortschatz",text:"Mixed-Review (Top-50-Verben) (Durchgang 1) + Beziehungen & Menschen beschreiben (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Perfekt“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Perfekt“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Easy German (optional zusätzlich: Nicos Weg B1 (DW))",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A17M",phase:"Grundlagen (A1-A2)",station:"A2.2",topic:"Kombitag: Dativverben & Komparativ/Superlativ (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Dativverben & Komparativ/Superlativ — direkt danach vertiefen: Wiederholung & Vertiefung: Dativverben & Komparativ/Superlativ",src:"YourGermanTeacher – a2.1 grammar"},{key:"v",label:"Wortschatz",text:"Stadt & Wegbeschreibung (Durchgang 1) + Mode & Aussehen (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Dativverben & Komparativ/Superlativ“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Dativverben & Komparativ/Superlativ“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens) (optional zusätzlich: Nicos Weg A1 (DW))",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A19M",phase:"Grundlagen (A1-A2)",station:"A2.2",topic:"Kombitag: Trennbare & untrennbare Verben (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Trennbare & untrennbare Verben — direkt danach vertiefen: Wiederholung & Vertiefung: Trennbare & untrennbare Verben",src:"YourGermanTeacher – a2.1 grammar"},{key:"v",label:"Wortschatz",text:"Umwelt & Natur (Durchgang 1) + Reisen & Verkehr (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Trennbare & untrennbare Verben“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Trennbare & untrennbare Verben“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg A2 (DW) (optional zusätzlich: Easy German)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A22M",phase:"Grundlagen (A1-A2)",station:"A2.2",topic:"Kombitag: Präteritum (sein/haben/Modalverben) (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Präteritum (sein/haben/Modalverben) — direkt danach vertiefen: Wiederholung & Vertiefung: Präteritum (sein/haben/Modalverben)",src:"YourGermanTeacher – a2.2 grammar"},{key:"v",label:"Wortschatz",text:"Bildung & Schule (Durchgang 1) + Mixed-Review (Substantive & Adjektive Top 100) (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Präteritum“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Präteritum“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (DW) (optional zusätzlich: Slow German Podcast (Annik Rubens))",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A24M",phase:"Grundlagen (A1-A2)",station:"A2.2",topic:"Kombitag: Nebensätze – Grundform (weil/dass/wenn) (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Nebensätze – Grundform (weil/dass/wenn) — direkt danach vertiefen: Wiederholung & Vertiefung: Nebensätze – Grundform (weil/dass/wenn)",src:"YourGermanTeacher – a2.2 grammar"},{key:"v",label:"Wortschatz",text:"Technologie & Digitales (Durchgang 1) + Geld & Einkaufen (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Nebensätze“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Nebensätze“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg A1 (DW) (optional zusätzlich: Nicos Weg A2 (DW))",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A26M",phase:"Grundlagen (A1-A2)",station:"A2.2",topic:"Kombitag: Reflexivverben (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Reflexivverben — direkt danach vertiefen: Wiederholung & Vertiefung: Reflexivverben",src:"YourGermanTeacher – a2.2 grammar"},{key:"v",label:"Wortschatz",text:"Freizeit & Hobbys (Durchgang 1) + Politik & Gesellschaft (Basics) (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Reflexivverben“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Reflexivverben“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Easy German (optional zusätzlich: Nicos Weg B1 (DW))",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A29M",phase:"Grundlagen (A1-A2)",station:"A2.2",topic:"Kombitag: Relativsätze – Grundform + Genitiv (Intro) (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Relativsätze – Grundform + Genitiv (Intro) — direkt danach vertiefen: Wiederholung & Vertiefung: Relativsätze – Grundform + Genitiv (Intro)",src:"YourGermanTeacher – a2.2 grammar"},{key:"v",label:"Wortschatz",text:"Beschwerde- & Höflichkeitsformeln (Durchgang 1) + Meinungs- & Diskussionswortschatz (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Relativsätze“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Relativsätze“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens) (optional zusätzlich: Nicos Weg A1 (DW))",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A31M",phase:"Grundlagen (A1-A2)",station:"A2.2",topic:"Kombitag: Adjektivdeklination – Intro (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Adjektivdeklination – Intro — direkt danach vertiefen: Wiederholung & Vertiefung: Adjektivdeklination – Intro",src:"YourGermanTeacher – a2.2 grammar"},{key:"v",label:"Wortschatz",text:"Präsentations-Redemittel (Durchgang 1) + Feedback- & Diskussions-Redemittel (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Adjektivdeklination“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Adjektivdeklination“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg A2 (DW) (optional zusätzlich: Easy German)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A33M",phase:"Grundlagen (A1-A2)",station:"A2.2",topic:"Kombitag: Perfekt vs. Präteritum – bewusster Einsatz (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Perfekt vs. Präteritum – bewusster Einsatz — direkt danach vertiefen: Wiederholung & Vertiefung: Perfekt vs. Präteritum – bewusster Einsatz",src:"YourGermanTeacher – b1.1 grammar"},{key:"v",label:"Wortschatz",text:"Mixed-Review: gesamter B1-Wortschatz (Durchgang 1) + Persönliche Fehlerliste & Problemwörter (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Perfekt vs. Präteritum“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Perfekt vs. Präteritum“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (DW) (optional zusätzlich: Slow German Podcast (Annik Rubens))",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"CEFR-A2",phase:"Grundlagen (A1-A2)",station:"A2.2",topic:"CEFR-Checkpoint: Bist du wirklich auf A2-Niveau? (Selbsteinschätzung nach dem Europarat-Raster)",tracks:[{key:"cl",label:"Hören",text:"Kannst du in Alltagssituationen (Familie, Einkaufen, Wohnort, Arbeit) die wichtigsten Wortgruppen und häufigsten Wörter verstehen und den Kernpunkt kurzer, klar gesprochener Durchsagen erfassen?",src:"CEFR-Raster (eigene Formulierung, A2 Hören)"},{key:"cr",label:"Lesen",text:"Kannst du kurze, einfache Texte lesen und gezielt Informationen finden, z. B. in Anzeigen, Speisekarten, Fahrplänen – und auch einen einfachen privaten Brief verstehen?",src:"CEFR-Raster (eigene Formulierung, A2 Lesen)"},{key:"csi",label:"Sprechen (Interaktion)",text:"Kannst du in einfachen Routineaufgaben direkt Informationen austauschen und ein kurzes soziales Gespräch führen, auch wenn du nicht immer alles verstehst?",src:"CEFR-Raster (eigene Formulierung, A2 Sprechen/Interaktion)"},{key:"csp",label:"Sprechen (Produktion)",text:"Kannst du mit mehreren einfachen Sätzen deine Familie, andere Menschen, deine Wohnsituation, deine Ausbildung und deinen aktuellen Job beschreiben?",src:"CEFR-Raster (eigene Formulierung, A2 Sprechen/Produktion)"},{key:"cw",label:"Schreiben",text:"Kannst du kurze Notizen/Mitteilungen schreiben und einen ganz einfachen persönlichen Brief, z. B. um dich zu bedanken?",src:"CEFR-Raster (eigene Formulierung, A2 Schreiben)"}]},
+{id:"A36M",phase:"B1-Aufbau",station:"A2.2",topic:"Kombitag: Plusquamperfekt (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Plusquamperfekt — direkt danach vertiefen: Wiederholung & Vertiefung: Plusquamperfekt",src:"YourGermanTeacher – b1.1 grammar"},{key:"v",label:"Wortschatz",text:"Begrüßung & Alltag (Durchgang 2) + Familie & Wohnen (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Plusquamperfekt“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Plusquamperfekt“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg A1 (DW) (optional zusätzlich: Nicos Weg A2 (DW))",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A38M",phase:"B1-Aufbau",station:"A2.2",topic:"Kombitag: Futur I (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Futur I — direkt danach vertiefen: Wiederholung & Vertiefung: Futur I",src:"YourGermanTeacher – b1.1 grammar"},{key:"v",label:"Wortschatz",text:"Essen & Trinken (Durchgang 2) + Tagesablauf & Uhrzeit (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Futur I“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Futur I“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Easy German (optional zusätzlich: Nicos Weg B1 (DW))",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A40M",phase:"B1-Aufbau",station:"A2.2",topic:"Kombitag: Konjunktiv II – Grundlagen (Höflichkeit, würde+Infinitiv) (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Konjunktiv II – Grundlagen (Höflichkeit, würde+Infinitiv) — direkt danach vertiefen: Wiederholung & Vertiefung: Konjunktiv II – Grundlagen (Höflichkeit, würde+Infinitiv)",src:"YourGermanTeacher – b1.1 grammar"},{key:"v",label:"Wortschatz",text:"Mixed-Review (High-Frequency Wörter A1+A2) (Durchgang 2) + Arbeit & Beruf (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Konjunktiv II“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Konjunktiv II“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens) (optional zusätzlich: Nicos Weg A1 (DW))",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A43M",phase:"B1-Aufbau",station:"A2.2",topic:"Kombitag: Wenn-Sätze + Konjunktiv II (irreale Bedingungen) (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Wenn-Sätze + Konjunktiv II (irreale Bedingungen) — direkt danach vertiefen: Wiederholung & Vertiefung: Wenn-Sätze + Konjunktiv II (irreale Bedingungen)",src:"YourGermanTeacher – b1.1 grammar"},{key:"v",label:"Wortschatz",text:"Vergangenheit erzählen (Ereignisse, Urlaub) (Durchgang 2) + Zukunftspläne & Wünsche (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Wenn-Sätze + Konjunktiv II“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Wenn-Sätze + Konjunktiv II“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg A2 (DW) (optional zusätzlich: Easy German)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A45M",phase:"B1-Aufbau",station:"A2.2",topic:"Kombitag: Passiv – Präsens & Präteritum (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Passiv – Präsens & Präteritum — direkt danach vertiefen: Wiederholung & Vertiefung: Passiv – Präsens & Präteritum",src:"YourGermanTeacher – b1.1 grammar"},{key:"v",label:"Wortschatz",text:"Gefühle & Meinungen (Durchgang 2) + Wetter & Jahreszeiten (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Passiv“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Passiv“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (DW) (optional zusätzlich: Slow German Podcast (Annik Rubens))",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A47M",phase:"B1-Aufbau",station:"A2.2",topic:"Kombitag: Passiv mit Modalverben (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Passiv mit Modalverben — direkt danach vertiefen: Wiederholung & Vertiefung: Passiv mit Modalverben",src:"YourGermanTeacher – b1.1 grammar"},{key:"v",label:"Wortschatz",text:"Nachrichten & Medien (Durchgang 2) + Gesundheit & beim Arzt (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Passiv mit Modalverben“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Passiv mit Modalverben“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg A1 (DW) (optional zusätzlich: Nicos Weg A2 (DW))",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A50M",phase:"B1-Aufbau",station:"A2.2",topic:"Kombitag: Relativsätze erweitert (mit Präpositionen) (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Relativsätze erweitert (mit Präpositionen) — direkt danach vertiefen: Wiederholung & Vertiefung: Relativsätze erweitert (mit Präpositionen)",src:"YourGermanTeacher – b1.1 grammar"},{key:"v",label:"Wortschatz",text:"Mixed-Review (Top-50-Verben) (Durchgang 2) + Beziehungen & Menschen beschreiben (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Relativsätze erweitert“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Relativsätze erweitert“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Easy German (optional zusätzlich: Nicos Weg B1 (DW))",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A52M",phase:"B1-Aufbau",station:"A2.2",topic:"Kombitag: Eingeschobene Relativsätze + da-/wo-Komposita (Einführung + Wiederholung an einem Tag)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Eingeschobene Relativsätze + da-/wo-Komposita — direkt danach vertiefen: Wiederholung & Vertiefung: Eingeschobene Relativsätze + da-/wo-Komposita",src:"YourGermanTeacher – b1.2 grammar"},{key:"v",label:"Wortschatz",text:"Stadt & Wegbeschreibung (Durchgang 2) + Mode & Aussehen (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Eingeschobene Relativsätze + da-/wo-Kompos“ – aktiv anwenden. Wenn noch Zeit ist, zusätzlich: Schreiben & Sprechen: freier Absatz zu „Eingeschobene Relativsätze + da-/wo-Kompos“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens) (optional zusätzlich: Nicos Weg A1 (DW))",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A54",phase:"B1-Aufbau",station:"B1.2",topic:"Einführung & Anwendung: Adjektivdeklination komplett",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Adjektivdeklination komplett",src:"YourGermanTeacher – b1.2 grammar"},{key:"v",label:"Wortschatz",text:"Umwelt & Natur (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Adjektivdeklination komplett“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Nicos Weg A2 (DW)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A55",phase:"B1-Aufbau",station:"B1.2",topic:"Wiederholung & Vertiefung: Adjektivdeklination komplett",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Adjektivdeklination komplett",src:"YourGermanTeacher – b1.2 grammar"},{key:"v",label:"Wortschatz",text:"Reisen & Verkehr (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Adjektivdeklination komplett“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Easy German",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A57",phase:"B1-Aufbau",station:"B1.2",topic:"Einführung & Anwendung: Nebensätze erweitert (obwohl, während, nachdem, bevor, seit)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Nebensätze erweitert (obwohl, während, nachdem, bevor, seit)",src:"YourGermanTeacher – b1.2 grammar"},{key:"v",label:"Wortschatz",text:"Bildung & Schule (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Nebensätze erweitert“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (DW)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A58",phase:"B1-Aufbau",station:"B1.2",topic:"Wiederholung & Vertiefung: Nebensätze erweitert (obwohl, während, nachdem, bevor, seit)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Nebensätze erweitert (obwohl, während, nachdem, bevor, seit)",src:"YourGermanTeacher – b1.2 grammar"},{key:"v",label:"Wortschatz",text:"Mixed-Review (Substantive & Adjektive Top 100) (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Nebensätze erweitert“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A59",phase:"B1-Aufbau",station:"B1.2",topic:"Einführung & Anwendung: Indirekte Fragesätze",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Indirekte Fragesätze",src:"YourGermanTeacher – b1.2 grammar"},{key:"v",label:"Wortschatz",text:"Technologie & Digitales (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Indirekte Fragesätze“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Nicos Weg A1 (DW)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A60",phase:"B1-Aufbau",station:"B1.2",topic:"Wiederholung & Vertiefung: Indirekte Fragesätze",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Indirekte Fragesätze",src:"YourGermanTeacher – b1.2 grammar"},{key:"v",label:"Wortschatz",text:"Geld & Einkaufen (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Indirekte Fragesätze“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg A2 (DW)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A61",phase:"B1-Aufbau",station:"B1.2",topic:"Einführung & Anwendung: Infinitiv mit zu / um...zu / ohne zu / (an)statt...zu",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Infinitiv mit zu / um...zu / ohne zu / (an)statt...zu",src:"YourGermanTeacher – b1.2 grammar"},{key:"v",label:"Wortschatz",text:"Freizeit & Hobbys (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Infinitiv mit zu / um...zu / ohne zu /“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Easy German",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A62",phase:"B1-Aufbau",station:"B1.2",topic:"Wiederholung & Vertiefung: Infinitiv mit zu / um...zu / ohne zu / (an)statt...zu",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Infinitiv mit zu / um...zu / ohne zu / (an)statt...zu",src:"YourGermanTeacher – b1.2 grammar"},{key:"v",label:"Wortschatz",text:"Politik & Gesellschaft (Basics) (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Infinitiv mit zu / um...zu / ohne zu /“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (DW)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A64",phase:"B1-Aufbau",station:"B1.2",topic:"Einführung & Anwendung: N-Deklination + Genitiv komplett + Genitivpräpositionen",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: N-Deklination + Genitiv komplett + Genitivpräpositionen",src:"YourGermanTeacher – b1.2 grammar"},{key:"v",label:"Wortschatz",text:"Beschwerde- & Höflichkeitsformeln (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „N-Deklination + Genitiv komplett + Genitiv“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A65",phase:"B1-Aufbau",station:"B1.2",topic:"Wiederholung & Vertiefung: N-Deklination + Genitiv komplett + Genitivpräpositionen",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: N-Deklination + Genitiv komplett + Genitivpräpositionen",src:"YourGermanTeacher – b1.2 grammar"},{key:"v",label:"Wortschatz",text:"Meinungs- & Diskussionswortschatz (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „N-Deklination + Genitiv komplett + Genitiv“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg A1 (DW)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A66",phase:"B1-Aufbau",station:"B1.2",topic:"Einführung & Anwendung: Konnektoren: trotzdem, deshalb, außerdem, sondern, je...desto",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Konnektoren: trotzdem, deshalb, außerdem, sondern, je...desto",src:"YourGermanTeacher – b1.2 grammar"},{key:"v",label:"Wortschatz",text:"Präsentations-Redemittel (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „trotzdem, deshalb, außerdem, sondern, je..“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Nicos Weg A2 (DW)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A67",phase:"B1-Aufbau",station:"B1.2",topic:"Wiederholung & Vertiefung: Konnektoren: trotzdem, deshalb, außerdem, sondern, je...desto",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Konnektoren: trotzdem, deshalb, außerdem, sondern, je...desto",src:"YourGermanTeacher – b1.2 grammar"},{key:"v",label:"Wortschatz",text:"Feedback- & Diskussions-Redemittel (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „trotzdem, deshalb, außerdem, sondern, je..“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Easy German",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A68",phase:"B1-Aufbau",station:"B1.2",topic:"Einführung & Anwendung: Indirekte Rede – Konjunktiv I (Basics für B1)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Indirekte Rede – Konjunktiv I (Basics für B1)",src:"YourGermanTeacher – b1.2 grammar"},{key:"v",label:"Wortschatz",text:"Mixed-Review: gesamter B1-Wortschatz (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Indirekte Rede“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (DW)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A69",phase:"B1-Aufbau",station:"B1.2",topic:"Wiederholung & Vertiefung: Indirekte Rede – Konjunktiv I (Basics für B1)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Indirekte Rede – Konjunktiv I (Basics für B1)",src:"YourGermanTeacher – b1.2 grammar"},{key:"v",label:"Wortschatz",text:"Persönliche Fehlerliste & Problemwörter (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Indirekte Rede“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"GB1-1",phase:"B1-Aufbau",station:"B1.2",topic:"Goethe-B1-Pflichtthema: Wahrnehmung & Motorik (Sinne, Bewegung, Körpergefühl)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung: Adjektive + Dativ/Akkusativ in Wahrnehmungssätzen (mir ist kalt, es tut weh)",src:"Goethe-Zertifikat B1 – offizielle Themenliste, Punkt 9"},{key:"v",label:"Wortschatz",text:"Wahrnehmung & Motorik: sehen/hören/fühlen/riechen/schmecken, sich bewegen, Gleichgewicht, Schmerzempfinden",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze über eine Sinneserfahrung (z. B. \"Was ich in der Klinik sehe/höre/fühle\")",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (DW)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"GB1-2",phase:"B1-Aufbau",station:"B1.2",topic:"Goethe-B1-Pflichtthema: Fremdsprachen (eigene Lerngeschichte, Sprachniveau, Mehrsprachigkeit)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung: seit/vor + Dativ für Sprachlern-Dauer (seit zwei Jahren, vor einem Jahr)",src:"Goethe-Zertifikat B1 – offizielle Themenliste, Punkt 12"},{key:"v",label:"Wortschatz",text:"Fremdsprachen: Muttersprache, Sprachniveau (A1–C2), Sprachkurs, zweisprachig aufwachsen, Aussprache, Wortschatz erweitern",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze über deine eigene Sprachlerngeschichte (Englisch, Deutsch, Hindi/Gujarati)",src:null},{key:"h",label:"Hören",text:"Easy German",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"GB1-3",phase:"B1-Aufbau",station:"B1.2",topic:"Goethe-B1-Pflichtthema: Dienstleistungen (Post, Bank, Reparatur, Behörden)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung: Passiv + \"lassen\" für Dienstleistungen (ich lasse mein Handy reparieren)",src:"Goethe-Zertifikat B1 – offizielle Themenliste, Punkt 7"},{key:"v",label:"Wortschatz",text:"Dienstleistungen: Post, Bank, Konto eröffnen, Überweisung, Reparaturwerkstatt, Behördengang, Termin vereinbaren, Formular ausfüllen",src:null},{key:"w",label:"Schreiben",text:"Schreiben: kurze formelle E-Mail an eine Bank/Behörde (Termin oder Anliegen)",src:null},{key:"h",label:"Hören",text:"Deutschlandfunk Nachrichten (native Tempo)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A70",phase:"B1-Finale",station:"B1.2",topic:"B1-Gesamtwiederholung: alle Zeiten im Überblick",tracks:[{key:"g",label:"Grammatik",text:"B1-Gesamtwiederholung: alle Zeiten im Überblick",src:"Eigene Notizen + Goethe/telc Modelltests"},{key:"v",label:"Wortschatz",text:"Gesamt-Review: schwächste Themen aus dem Fehlerlog",src:null},{key:"w",label:"Schreiben",text:"Prüfungsformat: Schreibaufgabe unter Zeitdruck üben",src:null},{key:"h",label:"Hören",text:"Nicos Weg A1 (DW)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A71",phase:"B1-Finale",station:"B1.2",topic:"B1-Gesamtwiederholung: alle Nebensatztypen im Überblick",tracks:[{key:"g",label:"Grammatik",text:"B1-Gesamtwiederholung: alle Nebensatztypen im Überblick",src:"Eigene Notizen + Goethe/telc Modelltests"},{key:"v",label:"Wortschatz",text:"Gesamt-Review: schwächste Themen aus dem Fehlerlog",src:null},{key:"w",label:"Schreiben",text:"Prüfungsformat: Schreibaufgabe unter Zeitdruck üben",src:null},{key:"h",label:"Hören",text:"Nicos Weg A2 (DW)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A72",phase:"B1-Finale",station:"B1.2",topic:"B1-Gesamtwiederholung: Adjektivdeklination & Kasus",tracks:[{key:"g",label:"Grammatik",text:"B1-Gesamtwiederholung: Adjektivdeklination & Kasus",src:"Eigene Notizen + Goethe/telc Modelltests"},{key:"v",label:"Wortschatz",text:"Gesamt-Review: schwächste Themen aus dem Fehlerlog",src:null},{key:"w",label:"Schreiben",text:"Prüfungsformat: Schreibaufgabe unter Zeitdruck üben",src:null},{key:"h",label:"Hören",text:"Easy German",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A73",phase:"B1-Finale",station:"B1.2",topic:"Kompletter B1-Mock-Test Teil 1 (Lesen & Hören)",tracks:[{key:"g",label:"Grammatik",text:"Kompletter B1-Mock-Test Teil 1 (Lesen & Hören)",src:"Eigene Notizen + Goethe/telc Modelltests"},{key:"v",label:"Wortschatz",text:"Gesamt-Review: schwächste Themen aus dem Fehlerlog",src:null},{key:"w",label:"Schreiben",text:"Prüfungsformat: Schreibaufgabe unter Zeitdruck üben",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (DW)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A74",phase:"B1-Finale",station:"B1.2",topic:"Kompletter B1-Mock-Test Teil 2 (Schreiben & Sprechen)",tracks:[{key:"g",label:"Grammatik",text:"Kompletter B1-Mock-Test Teil 2 (Schreiben & Sprechen)",src:"Eigene Notizen + Goethe/telc Modelltests"},{key:"v",label:"Wortschatz",text:"Gesamt-Review: schwächste Themen aus dem Fehlerlog",src:null},{key:"w",label:"Schreiben",text:"Prüfungsformat: Schreibaufgabe unter Zeitdruck üben",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A75",phase:"B1-Finale",station:"B1.2",topic:"Fehleranalyse: gesamtes B1-Fehlerlog durchgehen",tracks:[{key:"g",label:"Grammatik",text:"Fehleranalyse: gesamtes B1-Fehlerlog durchgehen",src:"Eigene Notizen + Goethe/telc Modelltests"},{key:"v",label:"Wortschatz",text:"Gesamt-Review: schwächste Themen aus dem Fehlerlog",src:null},{key:"w",label:"Schreiben",text:"Prüfungsformat: Schreibaufgabe unter Zeitdruck üben",src:null},{key:"h",label:"Hören",text:"Nicos Weg A1 (DW)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"A76",phase:"B1-Finale",station:"B1.2",topic:"Persönliche Schwachstellen-Liste vor Etappe 2",tracks:[{key:"g",label:"Grammatik",text:"Persönliche Schwachstellen-Liste vor Etappe 2",src:"Eigene Notizen + Goethe/telc Modelltests"},{key:"v",label:"Wortschatz",text:"Gesamt-Review: schwächste Themen aus dem Fehlerlog",src:null},{key:"w",label:"Schreiben",text:"Prüfungsformat: Schreibaufgabe unter Zeitdruck üben",src:null},{key:"h",label:"Hören",text:"Nicos Weg A2 (DW)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"CEFR-B1",phase:"B1-Finale",station:"B1.2",topic:"CEFR-Checkpoint: Bist du wirklich auf B1-Niveau? (Selbsteinschätzung nach dem Europarat-Raster)",tracks:[{key:"cl",label:"Hören",text:"Verstehst du die Hauptpunkte von klar gesprochener Standardsprache zu vertrauten Themen aus Arbeit, Schule und Freizeit – und das Wesentliche aus Radio/TV, wenn relativ langsam und deutlich gesprochen wird?",src:"CEFR-Raster (eigene Formulierung, B1 Hören)"},{key:"cr",label:"Lesen",text:"Verstehst du Texte, die vor allem aus gebräuchlicher Alltags- oder Berufssprache bestehen, und kannst du Ereignisse, Gefühle und Wünsche in persönlichen Briefen nachvollziehen?",src:"CEFR-Raster (eigene Formulierung, B1 Lesen)"},{key:"csi",label:"Sprechen (Interaktion)",text:"Kommst du in den meisten Reisesituationen zurecht und kannst du unvorbereitet an Gesprächen zu vertrauten Themen (Familie, Hobbys, Arbeit, Reisen, aktuelle Ereignisse) teilnehmen?",src:"CEFR-Raster (eigene Formulierung, B1 Sprechen/Interaktion)"},{key:"csp",label:"Sprechen (Produktion)",text:"Kannst du Erlebnisse, Träume, Hoffnungen und Ziele zusammenhängend beschreiben, kurz Gründe/Erklärungen geben und die Handlung eines Buches/Films nacherzählen?",src:"CEFR-Raster (eigene Formulierung, B1 Sprechen/Produktion)"},{key:"cw",label:"Schreiben",text:"Kannst du einfache, zusammenhängende Texte zu vertrauten Themen schreiben und in persönlichen Briefen Erfahrungen und Eindrücke schildern?",src:"CEFR-Raster (eigene Formulierung, B1 Schreiben)"}]},
+{id:"B1",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Konjunktiv I komplett – Formen & Gebrauch",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Konjunktiv I komplett – Formen & Gebrauch",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Arbeit & Wirtschaft (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Konjunktiv I komplett“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B2",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Konjunktiv I komplett – Formen & Gebrauch",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Konjunktiv I komplett – Formen & Gebrauch",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Umwelt & Klimawandel (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Konjunktiv I komplett“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Easy German (B2-Niveau)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B3",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Indirekte Rede: Aussagesätze mit Konjunktiv I",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Indirekte Rede: Aussagesätze mit Konjunktiv I",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Wissenschaft & Forschung (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Aussagesätze mit Konjunktiv I“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"DW – Langsam gesprochene Nachrichten",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B4",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Indirekte Rede: Aussagesätze mit Konjunktiv I",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Indirekte Rede: Aussagesätze mit Konjunktiv I",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Technologie & Digitalisierung (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Aussagesätze mit Konjunktiv I“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Deutschlandfunk Nachrichten (native Tempo)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B5",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Indirekte Rede: Fragesätze & Aufforderungssätze",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Indirekte Rede: Fragesätze & Aufforderungssätze",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Politik & Gesellschaft (vertieft) (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Fragesätze & Aufforderungssätze“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (Wiederholung)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B6",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Indirekte Rede: Fragesätze & Aufforderungssätze",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Indirekte Rede: Fragesätze & Aufforderungssätze",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Medien & Kommunikation (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Fragesätze & Aufforderungssätze“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B8",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Passiv – alle Zeiten + „sich lassen + Infinitiv“",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Passiv – alle Zeiten + „sich lassen + Infinitiv“",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Bildung & Karriere (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Passiv“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Easy German (B2-Niveau)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B9",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Passiv – alle Zeiten + „sich lassen + Infinitiv“",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Passiv – alle Zeiten + „sich lassen + Infinitiv“",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Gesundheit & Wohlbefinden (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Passiv“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"DW – Langsam gesprochene Nachrichten",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B10",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Passiversatzformen: man / sein + zu + Infinitiv",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Passiversatzformen: man / sein + zu + Infinitiv",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Kultur & Kunst (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „man / sein + zu + Infinitiv“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Deutschlandfunk Nachrichten (native Tempo)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B11",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Passiversatzformen: man / sein + zu + Infinitiv",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Passiversatzformen: man / sein + zu + Infinitiv",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Reisen & interkulturelle Themen (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „man / sein + zu + Infinitiv“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (Wiederholung)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B12",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Nominalisierung von Verben (Verb → Nomen)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Nominalisierung von Verben (Verb → Nomen)",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Recht & Verwaltung (Basics) (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Nominalisierung von Verben“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B13",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Nominalisierung von Verben (Verb → Nomen)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Nominalisierung von Verben (Verb → Nomen)",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Psychologie & zwischenmenschliche Beziehungen (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Nominalisierung von Verben“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Easy German (B2-Niveau)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B15",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Nominalisierung von Adjektiven",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Nominalisierung von Adjektiven",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Konsum & Nachhaltigkeit (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Nominalisierung von Adjektiven“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"DW – Langsam gesprochene Nachrichten",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B16",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Nominalisierung von Adjektiven",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Nominalisierung von Adjektiven",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Mixed-Review: B2-Kernwortschatz (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Nominalisierung von Adjektiven“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Deutschlandfunk Nachrichten (native Tempo)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B17",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Partizip I als Attribut (das lesende Kind)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Partizip I als Attribut (das lesende Kind)",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Redewendungen & Idiome (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Partizip I als Attribut“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (Wiederholung)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B18",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Partizip I als Attribut (das lesende Kind)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Partizip I als Attribut (das lesende Kind)",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Abstrakte Substantive (Nominalstil-Wortschatz) (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Partizip I als Attribut“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B19",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Partizip II als Attribut (der geschriebene Brief)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Partizip II als Attribut (der geschriebene Brief)",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Wissenschaftssprache & Fachbegriffe (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Partizip II als Attribut“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Easy German (B2-Niveau)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B20",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Partizip II als Attribut (der geschriebene Brief)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Partizip II als Attribut (der geschriebene Brief)",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Meinung & Debatte (erweitert) (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Partizip II als Attribut“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"DW – Langsam gesprochene Nachrichten",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B22",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Erweiterte Partizipialkonstruktionen (der von mir geschriebene Brief)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Erweiterte Partizipialkonstruktionen (der von mir geschriebene Brief)",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Beruf & Bewerbung (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Erweiterte Partizipialkonstruktionen“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Deutschlandfunk Nachrichten (native Tempo)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B23",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Erweiterte Partizipialkonstruktionen (der von mir geschriebene Brief)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Erweiterte Partizipialkonstruktionen (der von mir geschriebene Brief)",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Mixed-Review: Funktionsverbgefüge & feste Wendungen (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Erweiterte Partizipialkonstruktionen“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (Wiederholung)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B24",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Konnektoren: zwar...aber, dennoch, allerdings",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Konnektoren: zwar...aber, dennoch, allerdings",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Globalisierung & internationale Themen (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „zwar...aber, dennoch, allerdings“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B25",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Konnektoren: zwar...aber, dennoch, allerdings",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Konnektoren: zwar...aber, dennoch, allerdings",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Ethik & Werte (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „zwar...aber, dennoch, allerdings“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Easy German (B2-Niveau)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B26",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Konnektoren: indem, sofern, sodass",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Konnektoren: indem, sofern, sodass",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Geschichte & Erinnerungskultur (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „indem, sofern, sodass“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"DW – Langsam gesprochene Nachrichten",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B27",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Konnektoren: indem, sofern, sodass",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Konnektoren: indem, sofern, sodass",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Stadt- & Landleben (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „indem, sofern, sodass“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Deutschlandfunk Nachrichten (native Tempo)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B29",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Konnektoren: obgleich, wenngleich, insofern",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Konnektoren: obgleich, wenngleich, insofern",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Mixed-Review: Synonyme & Nuancen (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „obgleich, wenngleich, insofern“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (Wiederholung)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B30",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Konnektoren: obgleich, wenngleich, insofern",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Konnektoren: obgleich, wenngleich, insofern",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Digitale Kommunikation & soziale Medien (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „obgleich, wenngleich, insofern“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B31",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Funktionsverbgefüge I (in Frage stellen, zur Verfügung stellen)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Funktionsverbgefüge I (in Frage stellen, zur Verfügung stellen)",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Innovation & Zukunftstechnologien (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Funktionsverbgefüge I“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Easy German (B2-Niveau)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B32",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Funktionsverbgefüge I (in Frage stellen, zur Verfügung stellen)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Funktionsverbgefüge I (in Frage stellen, zur Verfügung stellen)",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Mixed-Review: Modalpartikeln im Gebrauch (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Funktionsverbgefüge I“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"DW – Langsam gesprochene Nachrichten",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B33",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Funktionsverbgefüge II (Anwendung finden, Einfluss nehmen)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Funktionsverbgefüge II (Anwendung finden, Einfluss nehmen)",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Prüfungswortschatz: Präsentation & Diskussion (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Funktionsverbgefüge II“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Deutschlandfunk Nachrichten (native Tempo)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B34",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Funktionsverbgefüge II (Anwendung finden, Einfluss nehmen)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Funktionsverbgefüge II (Anwendung finden, Einfluss nehmen)",src:"YourGermanTeacher – b2.1 grammar"},{key:"v",label:"Wortschatz",text:"Gesamt-Review: gesamter B2-Wortschatz (Durchgang 1)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Funktionsverbgefüge II“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (Wiederholung)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B36",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Modalpartikeln I (doch, ja, eben, halt)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Modalpartikeln I (doch, ja, eben, halt)",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Arbeit & Wirtschaft (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Modalpartikeln I“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B37",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Modalpartikeln I (doch, ja, eben, halt)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Modalpartikeln I (doch, ja, eben, halt)",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Umwelt & Klimawandel (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Modalpartikeln I“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Easy German (B2-Niveau)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B38",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Modalpartikeln II (mal, denn, schon, ruhig)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Modalpartikeln II (mal, denn, schon, ruhig)",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Wissenschaft & Forschung (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Modalpartikeln II“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"DW – Langsam gesprochene Nachrichten",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B39",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Modalpartikeln II (mal, denn, schon, ruhig)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Modalpartikeln II (mal, denn, schon, ruhig)",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Technologie & Digitalisierung (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Modalpartikeln II“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Deutschlandfunk Nachrichten (native Tempo)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B40",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Zweiteilige Konnektoren vertieft (sowohl...als auch, weder...noch)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Zweiteilige Konnektoren vertieft (sowohl...als auch, weder...noch)",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Politik & Gesellschaft (vertieft) (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Zweiteilige Konnektoren vertieft“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (Wiederholung)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B41",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Zweiteilige Konnektoren vertieft (sowohl...als auch, weder...noch)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Zweiteilige Konnektoren vertieft (sowohl...als auch, weder...noch)",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Medien & Kommunikation (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Zweiteilige Konnektoren vertieft“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B43",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Komplexe Satzverschachtelung: mehrere Nebensätze kombinieren",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Komplexe Satzverschachtelung: mehrere Nebensätze kombinieren",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Bildung & Karriere (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „mehrere Nebensätze kombinieren“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Easy German (B2-Niveau)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B44",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Komplexe Satzverschachtelung: mehrere Nebensätze kombinieren",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Komplexe Satzverschachtelung: mehrere Nebensätze kombinieren",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Gesundheit & Wohlbefinden (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „mehrere Nebensätze kombinieren“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"DW – Langsam gesprochene Nachrichten",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B45",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Genitivattribute vs. von-Konstruktionen (Stilebenen)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Genitivattribute vs. von-Konstruktionen (Stilebenen)",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Kultur & Kunst (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Genitivattribute vs. von-Konstruktionen“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Deutschlandfunk Nachrichten (native Tempo)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B46",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Genitivattribute vs. von-Konstruktionen (Stilebenen)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Genitivattribute vs. von-Konstruktionen (Stilebenen)",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Reisen & interkulturelle Themen (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Genitivattribute vs. von-Konstruktionen“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (Wiederholung)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B47",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Erweiterte Relativsätze mit was/wo/wobei",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Erweiterte Relativsätze mit was/wo/wobei",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Recht & Verwaltung (Basics) (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Erweiterte Relativsätze mit was/wo/wobei“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B48",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Erweiterte Relativsätze mit was/wo/wobei",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Erweiterte Relativsätze mit was/wo/wobei",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Psychologie & zwischenmenschliche Beziehungen (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Erweiterte Relativsätze mit was/wo/wobei“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Easy German (B2-Niveau)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B50",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Konzessivsätze – Vertiefung & Stilvarianten",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Konzessivsätze – Vertiefung & Stilvarianten",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Konsum & Nachhaltigkeit (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Konzessivsätze“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"DW – Langsam gesprochene Nachrichten",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B51",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Konzessivsätze – Vertiefung & Stilvarianten",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Konzessivsätze – Vertiefung & Stilvarianten",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Mixed-Review: B2-Kernwortschatz (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Konzessivsätze“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Deutschlandfunk Nachrichten (native Tempo)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B52",phase:"B2-Aufbau",station:"B2.1",topic:"Einführung & Anwendung: Finalsätze: damit vs. um...zu (Feinheiten)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Finalsätze: damit vs. um...zu (Feinheiten)",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Redewendungen & Idiome (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „damit vs. um...zu“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (Wiederholung)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B53",phase:"B2-Aufbau",station:"B2.1",topic:"Wiederholung & Vertiefung: Finalsätze: damit vs. um...zu (Feinheiten)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Finalsätze: damit vs. um...zu (Feinheiten)",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Abstrakte Substantive (Nominalstil-Wortschatz) (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „damit vs. um...zu“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B54",phase:"B2-Aufbau",station:"B2.2",topic:"Einführung & Anwendung: Temporale Konnektoren erweitert (sobald, bis, seitdem)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Temporale Konnektoren erweitert (sobald, bis, seitdem)",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Wissenschaftssprache & Fachbegriffe (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Temporale Konnektoren erweitert“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Easy German (B2-Niveau)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B55",phase:"B2-Aufbau",station:"B2.2",topic:"Wiederholung & Vertiefung: Temporale Konnektoren erweitert (sobald, bis, seitdem)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Temporale Konnektoren erweitert (sobald, bis, seitdem)",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Meinung & Debatte (erweitert) (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Temporale Konnektoren erweitert“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"DW – Langsam gesprochene Nachrichten",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B57",phase:"B2-Aufbau",station:"B2.2",topic:"Einführung & Anwendung: Adversative Konnektoren (während vs. wohingegen)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Adversative Konnektoren (während vs. wohingegen)",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Beruf & Bewerbung (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Adversative Konnektoren“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Deutschlandfunk Nachrichten (native Tempo)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B58",phase:"B2-Aufbau",station:"B2.2",topic:"Wiederholung & Vertiefung: Adversative Konnektoren (während vs. wohingegen)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Adversative Konnektoren (während vs. wohingegen)",src:"YourGermanTeacher – b2.2 grammar"},{key:"v",label:"Wortschatz",text:"Mixed-Review: Funktionsverbgefüge & feste Wendungen (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Adversative Konnektoren“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (Wiederholung)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B59",phase:"B2-Aufbau",station:"B2.2",topic:"Einführung & Anwendung: Textkohärenz: Pronominaladverbien in Texten (darauf, dabei, dadurch)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Textkohärenz: Pronominaladverbien in Texten (darauf, dabei, dadurch)",src:"DeutschlernerBlog / eigene Recherche (auf YourGermanTeacher oft nicht direkt vorhanden)"},{key:"v",label:"Wortschatz",text:"Globalisierung & internationale Themen (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Pronominaladverbien in Texten“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B60",phase:"B2-Aufbau",station:"B2.2",topic:"Wiederholung & Vertiefung: Textkohärenz: Pronominaladverbien in Texten (darauf, dabei, dadurch)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Textkohärenz: Pronominaladverbien in Texten (darauf, dabei, dadurch)",src:"DeutschlernerBlog / eigene Recherche (auf YourGermanTeacher oft nicht direkt vorhanden)"},{key:"v",label:"Wortschatz",text:"Ethik & Werte (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Pronominaladverbien in Texten“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Easy German (B2-Niveau)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B61",phase:"B2-Aufbau",station:"B2.2",topic:"Einführung & Anwendung: Wortbildung: Nomen-Suffixe (-heit, -keit, -ung, -schaft)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Wortbildung: Nomen-Suffixe (-heit, -keit, -ung, -schaft)",src:"DeutschlernerBlog / eigene Recherche (auf YourGermanTeacher oft nicht direkt vorhanden)"},{key:"v",label:"Wortschatz",text:"Geschichte & Erinnerungskultur (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Nomen-Suffixe“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"DW – Langsam gesprochene Nachrichten",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B62",phase:"B2-Aufbau",station:"B2.2",topic:"Wiederholung & Vertiefung: Wortbildung: Nomen-Suffixe (-heit, -keit, -ung, -schaft)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Wortbildung: Nomen-Suffixe (-heit, -keit, -ung, -schaft)",src:"DeutschlernerBlog / eigene Recherche (auf YourGermanTeacher oft nicht direkt vorhanden)"},{key:"v",label:"Wortschatz",text:"Stadt- & Landleben (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Nomen-Suffixe“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Deutschlandfunk Nachrichten (native Tempo)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B64",phase:"B2-Aufbau",station:"B2.2",topic:"Einführung & Anwendung: Wortbildung: Adjektiv-Suffixe (-lich, -ig, -bar, -los)",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Wortbildung: Adjektiv-Suffixe (-lich, -ig, -bar, -los)",src:"DeutschlernerBlog / eigene Recherche (auf YourGermanTeacher oft nicht direkt vorhanden)"},{key:"v",label:"Wortschatz",text:"Mixed-Review: Synonyme & Nuancen (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Adjektiv-Suffixe“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (Wiederholung)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B65",phase:"B2-Aufbau",station:"B2.2",topic:"Wiederholung & Vertiefung: Wortbildung: Adjektiv-Suffixe (-lich, -ig, -bar, -los)",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Wortbildung: Adjektiv-Suffixe (-lich, -ig, -bar, -los)",src:"DeutschlernerBlog / eigene Recherche (auf YourGermanTeacher oft nicht direkt vorhanden)"},{key:"v",label:"Wortschatz",text:"Digitale Kommunikation & soziale Medien (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Adjektiv-Suffixe“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B66",phase:"B2-Aufbau",station:"B2.2",topic:"Einführung & Anwendung: Stilebenen: gesprochene vs. geschriebene Sprache",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Stilebenen: gesprochene vs. geschriebene Sprache",src:"DeutschlernerBlog / eigene Recherche (auf YourGermanTeacher oft nicht direkt vorhanden)"},{key:"v",label:"Wortschatz",text:"Innovation & Zukunftstechnologien (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „gesprochene vs. geschriebene Sprache“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Easy German (B2-Niveau)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B67",phase:"B2-Aufbau",station:"B2.2",topic:"Wiederholung & Vertiefung: Stilebenen: gesprochene vs. geschriebene Sprache",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Stilebenen: gesprochene vs. geschriebene Sprache",src:"DeutschlernerBlog / eigene Recherche (auf YourGermanTeacher oft nicht direkt vorhanden)"},{key:"v",label:"Wortschatz",text:"Mixed-Review: Modalpartikeln im Gebrauch (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „gesprochene vs. geschriebene Sprache“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"DW – Langsam gesprochene Nachrichten",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B68",phase:"B2-Aufbau",station:"B2.2",topic:"Einführung & Anwendung: Redewendungen & Idiome – häufige B2-Ausdrücke",tracks:[{key:"g",label:"Grammatik",text:"Einführung & Anwendung: Redewendungen & Idiome – häufige B2-Ausdrücke",src:"DeutschlernerBlog / eigene Recherche (auf YourGermanTeacher oft nicht direkt vorhanden)"},{key:"v",label:"Wortschatz",text:"Prüfungswortschatz: Präsentation & Diskussion (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben: 5–6 Sätze / Kurztext mit „Redewendungen & Idiome“ – aktiv anwenden.",src:null},{key:"h",label:"Hören",text:"Deutschlandfunk Nachrichten (native Tempo)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B69",phase:"B2-Aufbau",station:"B2.2",topic:"Wiederholung & Vertiefung: Redewendungen & Idiome – häufige B2-Ausdrücke",tracks:[{key:"g",label:"Grammatik",text:"Wiederholung & Vertiefung: Redewendungen & Idiome – häufige B2-Ausdrücke",src:"DeutschlernerBlog / eigene Recherche (auf YourGermanTeacher oft nicht direkt vorhanden)"},{key:"v",label:"Wortschatz",text:"Gesamt-Review: gesamter B2-Wortschatz (Durchgang 2)",src:null},{key:"w",label:"Schreiben",text:"Schreiben & Sprechen: freier Absatz zu „Redewendungen & Idiome“ schreiben, danach 1–2 Min. frei dazu sprechen.",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (Wiederholung)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B70",phase:"B2-Prüfungstraining",station:"B2.2",topic:"Schreiben: Formeller Brief/E-Mail (Beschwerde) – B2-Niveau",tracks:[{key:"g",label:"Grammatik",text:"Schreiben: Formeller Brief/E-Mail (Beschwerde) – B2-Niveau",src:"Eigene Notizen + Goethe/telc Modelltests"},{key:"v",label:"Wortschatz",text:"Gesamt-Review: schwächste Themen aus dem Fehlerlog",src:null},{key:"w",label:"Schreiben",text:"Prüfungsformat: Schreibaufgabe unter Zeitdruck üben",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B71",phase:"B2-Prüfungstraining",station:"B2.2",topic:"Schreiben: Für-und-Wider-Text (Pro/Contra-Aufsatz)",tracks:[{key:"g",label:"Grammatik",text:"Schreiben: Für-und-Wider-Text (Pro/Contra-Aufsatz)",src:"Eigene Notizen + Goethe/telc Modelltests"},{key:"v",label:"Wortschatz",text:"Gesamt-Review: schwächste Themen aus dem Fehlerlog",src:null},{key:"w",label:"Schreiben",text:"Prüfungsformat: Schreibaufgabe unter Zeitdruck üben",src:null},{key:"h",label:"Hören",text:"Easy German (B2-Niveau)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B72",phase:"B2-Prüfungstraining",station:"B2.2",topic:"Sprechen: Kurzpräsentation halten (5 Min.) zu einem Thema",tracks:[{key:"g",label:"Grammatik",text:"Sprechen: Kurzpräsentation halten (5 Min.) zu einem Thema",src:"Eigene Notizen + Goethe/telc Modelltests"},{key:"v",label:"Wortschatz",text:"Gesamt-Review: schwächste Themen aus dem Fehlerlog",src:null},{key:"w",label:"Schreiben",text:"Prüfungsformat: Schreibaufgabe unter Zeitdruck üben",src:null},{key:"h",label:"Hören",text:"DW – Langsam gesprochene Nachrichten",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B73",phase:"B2-Prüfungstraining",station:"B2.2",topic:"Sprechen: Diskussion/Debatte simulieren (Pro/Contra)",tracks:[{key:"g",label:"Grammatik",text:"Sprechen: Diskussion/Debatte simulieren (Pro/Contra)",src:"Eigene Notizen + Goethe/telc Modelltests"},{key:"v",label:"Wortschatz",text:"Gesamt-Review: schwächste Themen aus dem Fehlerlog",src:null},{key:"w",label:"Schreiben",text:"Prüfungsformat: Schreibaufgabe unter Zeitdruck üben",src:null},{key:"h",label:"Hören",text:"Deutschlandfunk Nachrichten (native Tempo)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B74",phase:"B2-Prüfungstraining",station:"B2.2",topic:"Kompletter schriftlicher Mock-Test (Goethe/telc B2)",tracks:[{key:"g",label:"Grammatik",text:"Kompletter schriftlicher Mock-Test (Goethe/telc B2)",src:"Eigene Notizen + Goethe/telc Modelltests"},{key:"v",label:"Wortschatz",text:"Gesamt-Review: schwächste Themen aus dem Fehlerlog",src:null},{key:"w",label:"Schreiben",text:"Prüfungsformat: Schreibaufgabe unter Zeitdruck üben",src:null},{key:"h",label:"Hören",text:"Nicos Weg B1 (Wiederholung)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B75",phase:"B2-Prüfungstraining",station:"B2.2",topic:"Kompletter mündlicher Mock-Test (Goethe/telc B2)",tracks:[{key:"g",label:"Grammatik",text:"Kompletter mündlicher Mock-Test (Goethe/telc B2)",src:"Eigene Notizen + Goethe/telc Modelltests"},{key:"v",label:"Wortschatz",text:"Gesamt-Review: schwächste Themen aus dem Fehlerlog",src:null},{key:"w",label:"Schreiben",text:"Prüfungsformat: Schreibaufgabe unter Zeitdruck üben",src:null},{key:"h",label:"Hören",text:"Slow German Podcast (Annik Rubens)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B76",phase:"B2-Prüfungstraining",station:"B2.2",topic:"Fehleranalyse: gesamtes B2-Fehlerlog durchgehen",tracks:[{key:"g",label:"Grammatik",text:"Fehleranalyse: gesamtes B2-Fehlerlog durchgehen",src:"Eigene Notizen + Goethe/telc Modelltests"},{key:"v",label:"Wortschatz",text:"Gesamt-Review: schwächste Themen aus dem Fehlerlog",src:null},{key:"w",label:"Schreiben",text:"Prüfungsformat: Schreibaufgabe unter Zeitdruck üben",src:null},{key:"h",label:"Hören",text:"Easy German (B2-Niveau)",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"B77",phase:"B2-Prüfungstraining",station:"B2.2",topic:"Große Abschluss-Wiederholung vor Februar",tracks:[{key:"g",label:"Grammatik",text:"Große Abschluss-Wiederholung vor Februar",src:"Eigene Notizen + Goethe/telc Modelltests"},{key:"v",label:"Wortschatz",text:"Gesamt-Review: schwächste Themen aus dem Fehlerlog",src:null},{key:"w",label:"Schreiben",text:"Prüfungsformat: Schreibaufgabe unter Zeitdruck üben",src:null},{key:"h",label:"Hören",text:"DW – Langsam gesprochene Nachrichten",src:null},{key:"d",label:"Duolingo",text:"Mind. 1 Duolingo-Lektion abschließen (Streak halten)",src:null}]},
+{id:"CEFR-B2",phase:"B2-Prüfungstraining",station:"B2.2",topic:"CEFR-Checkpoint: Bist du wirklich auf B2-Niveau? (Selbsteinschätzung nach dem Europarat-Raster)",tracks:[{key:"cl",label:"Hören",text:"Folgst du längeren Redebeiträgen und komplexeren Argumentationen, wenn dir das Thema einigermaßen vertraut ist, und verstehst du die meisten Nachrichten und Spielfilme in Standardsprache?",src:"CEFR-Raster (eigene Formulierung, B2 Hören)"},{key:"cr",label:"Lesen",text:"Verstehst du Artikel/Berichte zu aktuellen Themen, in denen die Autoren eine Haltung einnehmen, und kannst du zeitgenössische literarische Prosa lesen?",src:"CEFR-Raster (eigene Formulierung, B2 Lesen)"},{key:"csi",label:"Sprechen (Interaktion)",text:"Verständigst du dich so spontan und fließend, dass ein normales Gespräch mit Muttersprachlern gut möglich ist, und nimmst du aktiv an Diskussionen teil, inklusive Begründung deiner Standpunkte?",src:"CEFR-Raster (eigene Formulierung, B2 Sprechen/Interaktion)"},{key:"csp",label:"Sprechen (Produktion)",text:"Gibst du zu Themen aus deinem Interessengebiet klare, detaillierte Darstellungen und kannst du einen Standpunkt zu einer aktuellen Frage inkl. Vor-/Nachteilen erläutern?",src:"CEFR-Raster (eigene Formulierung, B2 Sprechen/Produktion)"},{key:"cw",label:"Schreiben",text:"Schreibst du klare, detaillierte Texte zu einer Vielzahl von Themen, z. B. einen Aufsatz/Bericht, der Informationen weitergibt oder Argumente für/gegen eine Position liefert?",src:"CEFR-Raster (eigene Formulierung, B2 Schreiben)"}]}
+];
+// ---------- Fixed non-study calendar dates (known in advance) ----------
+const FIXED_HOLIDAYS = {
+  "2027-01-22": {label:"Geburtstag 🎂 – frei, kein Studium", kind:"Feiertag"},
+  "2026-10-07": {label:"Ruhetag – bewusste Pause, kein Lernen", kind:"Ruhetag"},
+  "2026-10-21": {label:"Ruhetag – bewusste Pause, kein Lernen", kind:"Ruhetag"},
+  "2026-11-04": {label:"Ruhetag – bewusste Pause, kein Lernen", kind:"Ruhetag"},
+  "2026-11-18": {label:"Ruhetag – bewusste Pause, kein Lernen", kind:"Ruhetag"},
+  "2026-12-02": {label:"Ruhetag – bewusste Pause, kein Lernen", kind:"Ruhetag"},
+  "2026-12-16": {label:"Ruhetag – bewusste Pause, kein Lernen", kind:"Ruhetag"},
+  "2026-12-30": {label:"Ruhetag – bewusste Pause, kein Lernen", kind:"Ruhetag"},
+  "2027-01-13": {label:"Ruhetag – bewusste Pause, kein Lernen", kind:"Ruhetag"},
+  "2027-01-27": {label:"Ruhetag – bewusste Pause, kein Lernen", kind:"Ruhetag"},
+};
+
+const START_DATE = new Date(2026,8,23); // 23 Sep 2026 (morgen)
+const END_DATE = new Date(2027,0,31);   // 31 Jan 2027 – Februar bleibt frei für FILTERS
+
+const WD = ["So","Mo","Di","Mi","Do","Fr","Sa"];
+function iso(d){ return d.toISOString().slice(0,10); }
+function fmt(d){ return `${WD[d.getDay()]} ${String(d.getDate()).padStart(2,"0")}.${String(d.getMonth()+1).padStart(2,"0")}.${d.getFullYear()}`; }
+function addDays(d,n){ const r = new Date(d); r.setDate(r.getDate()+n); return r; }
+function todayDate(){ const t = new Date(); t.setHours(0,0,0,0); return t; }
+
+const STORE_KEY = "a1-b2-cefr-progress";
+const PLAN_VERSION = "2026-09-23-118items-merged-thinned-v4";
+let completion = {};
+let schedule = {};
+let extraHolidays = {};
+let currentFilter = "Alle";
+let dateFilter = "";
+
+function itemState(id){ if(!completion[id]) completion[id] = {}; return completion[id]; }
+function itemDone(item){ return item.tracks.every(t=>itemState(item.id)[t.key]); }
+function isCheckpoint(item){ return item.id.startsWith("CEFR-"); }
+
+function assignFrom(fromDate, pool, fillFreedUpTo){
+  const assign = {};
+  const freed = {};
+  let d = new Date(fromDate);
+  let idx = 0;
+  let guard = 0;
+  while(idx < pool.length && guard < 2000){
+    const k = iso(d);
+    if(!FIXED_HOLIDAYS[k]){
+      assign[pool[idx].id] = k;
+      idx++;
+    }
+    d = addDays(d,1);
+    guard++;
+  }
+  if(idx >= pool.length && fillFreedUpTo){
+    while(d <= fillFreedUpTo && guard < 3000){
+      const k = iso(d);
+      if(!FIXED_HOLIDAYS[k]){
+        freed[k] = {label:"Frei – Plan bereits erfüllt! 🎉", kind:"Feiertag"};
+      }
+      d = addDays(d,1);
+      guard++;
+    }
+  }
+  return {assign, freed};
+}
+
+function buildInitialSchedule(){
+  const r = assignFrom(START_DATE, ITEMS, null);
+  schedule = r.assign;
+  extraHolidays = {};
+}
+
+function reschedule(){
+  const today = todayDate();
+  const remaining = [];
+  const frozen = {};
+  ITEMS.forEach(it=>{
+    const dstr = schedule[it.id];
+    const d = dstr ? new Date(dstr) : null;
+    const isPast = d && d < today;
+    if(itemDone(it) || isPast){
+      if(dstr) frozen[it.id] = dstr;
+    } else {
+      remaining.push(it);
+    }
+  });
+  const r = assignFrom(today, remaining, END_DATE);
+  schedule = {...frozen, ...r.assign};
+  extraHolidays = {};
+  Object.assign(extraHolidays, r.freed);
+  saveState();
+  renderStats();
+  renderBoard();
+}
+
+function loadState(){
+  return new Promise((resolve)=>{
+    let raw = null;
+    try{ raw = localStorage.getItem(STORE_KEY); }catch(e){ raw = null; }
+    if(raw){
+      try{
+        const parsed = JSON.parse(raw);
+        if(parsed.planVersion !== PLAN_VERSION){
+          completion = parsed.completion || {};
+          buildInitialSchedule();
+          saveState();
+        } else {
+          completion = parsed.completion || {};
+          schedule = parsed.schedule || {};
+          extraHolidays = parsed.extraHolidays || {};
+          if(Object.keys(schedule).length === 0) buildInitialSchedule();
+        }
+      }catch(e){ buildInitialSchedule(); }
+    } else {
+      buildInitialSchedule();
+    }
+    resolve();
+  });
+}
+function saveState(){
+  try{
+    localStorage.setItem(STORE_KEY, JSON.stringify({planVersion: PLAN_VERSION, completion, schedule, extraHolidays}));
+  }catch(e){ /* storage unavailable — progress just won't persist across reloads */ }
+}
+
+function totalTasks(){ return ITEMS.reduce((s,it)=>s+it.tracks.length,0); }
+
+function renderStats(){
+  let done=0, doneItems=0, lastStation="A1.1";
+  ITEMS.forEach(it=>{
+    const ds = itemState(it.id);
+    it.tracks.forEach(t=>{ if(ds[t.key]) done++; });
+    if(itemDone(it)) { doneItems++; lastStation = it.station; }
+  });
+  document.getElementById("stat-today").textContent = fmt(todayDate());
+  document.getElementById("stat-tasks").textContent = done + " / " + totalTasks();
+  document.getElementById("stat-pct").textContent = Math.round((done/totalTasks())*100) + "%";
+  document.getElementById("stat-station").textContent = lastStation;
+  document.getElementById("range-info").textContent =
+    `Start ${fmt(START_DATE)} · Ziel ${fmt(END_DATE)} · ${doneItems} / ${ITEMS.length} Einträge abgeschlossen.`;
+}
+
+function trackRow(item, t){
+  const ds = itemState(item.id);
+  const checked = !!ds[t.key];
+  return `
+    <label class="track ${checked?"done":""}">
+      <input type="checkbox" data-id="${item.id}" data-k="${t.key}" ${checked?"checked":""}>
+      <span>
+        <span class="tlabel">${t.label}</span>
+        <span class="ttext">${t.text}</span>
+        ${t.src ? `<span class="tsrc">${t.src}</span>` : ""}
+      </span>
+    </label>`;
+}
+
+function dayCard(item, dateStr){
+  const d = new Date(dateStr);
+  const allDone = itemDone(item);
+  const overflow = d > END_DATE;
+  const cefr = isCheckpoint(item);
+  return `
+  <details class="day">
+    <summary>
+      <div class="date-box">
+        <div class="k">${overflow?"Nach Ziel":"Datum"}</div>
+        <div class="d">${fmt(d)}</div>
+      </div>
+      <span class="tag ${allDone?"done":""} ${cefr && !allDone ? "cefr":""}">${allDone ? "Erledigt" : (cefr ? "CEFR-Checkpoint" : item.phase)}</span>
+      <div class="topic">${item.topic}</div>
+      <svg class="chev" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6"/></svg>
+    </summary>
+    <div class="tracks">
+      ${item.tracks.map(t=>trackRow(item,t)).join("")}
+    </div>
+    <div class="reschedule-row">
+      <button data-reschedule="1" class="resched-btn">↻ Neu planen (was fehlt, rückt nach)</button>
+    </div>
+  </details>`;
+}
+
+function specialCard(dateStr, info){
+  const isBday = info.label.includes("Geburtstag");
+  const isFree = info.label.startsWith("Frei");
+  const isRuhe = info.kind === "Ruhetag";
+  const cls = (isBday||isFree||isRuhe) ? "holiday" : "reise";
+  const tag = isBday ? "Geburtstag" : (isFree ? "Frei" : (isRuhe ? "Ruhetag" : "Kein Lerntag"));
+  return `
+  <div class="special ${cls}">
+    <div class="date-box">
+      <div class="k">${info.kind}</div>
+      <div class="d">${fmt(new Date(dateStr))}</div>
+    </div>
+    <span class="tag">${tag}</span>
+    <div class="lbl">${info.label}</div>
+  </div>`;
+}
+
+function matchesDate(dateStr, q){
+  if(!q) return true;
+  q = q.trim().toLowerCase();
+  const monthMap = {jan:"-01-",feb:"-02-",okt:"-10-",nov:"-11-",dez:"-12-",sep:"-09-"};
+  for(const key in monthMap){ if(q.includes(key) && dateStr.includes(monthMap[key])) return true; }
+  return fmt(new Date(dateStr)).toLowerCase().includes(q);
+}
+
+function renderBoard(){
+  const el = document.getElementById("board");
+  const rows = [];
+  ITEMS.forEach(it=>{ if(schedule[it.id]) rows.push({date:schedule[it.id], item:it}); });
+  Object.keys(FIXED_HOLIDAYS).forEach(k=>{ if(new Date(k) >= START_DATE) rows.push({date:k, special:FIXED_HOLIDAYS[k]}); });
+  Object.keys(extraHolidays).forEach(k=> rows.push({date:k, special:extraHolidays[k]}));
+  rows.sort((a,b)=> a.date < b.date ? -1 : (a.date > b.date ? 1 : 0));
+
+  const filtered = rows.filter(r=>{
+    const cat = r.item ? r.item.phase : (r.special.kind);
+    const catOk = currentFilter==="Alle" || cat===currentFilter;
+    return catOk && matchesDate(r.date, dateFilter);
+  });
+
+  document.getElementById("result-count").textContent = filtered.length;
+  el.innerHTML = filtered.map(r=> r.item ? dayCard(r.item, r.date) : specialCard(r.date, r.special)).join("");
+
+  el.querySelectorAll("input[type=checkbox]").forEach(cb=>{
+    cb.addEventListener("change", e=>{
+      const id = e.target.dataset.id, k = e.target.dataset.k;
+      const ds = itemState(id);
+      ds[k] = e.target.checked;
+      saveState();
+      renderStats();
+      const wrap = e.target.closest(".track");
+      wrap.classList.toggle("done", e.target.checked);
+    });
+  });
+  el.querySelectorAll("[data-reschedule]").forEach(btn=>{
+    btn.addEventListener("click", e=>{
+      e.preventDefault();
+      reschedule();
+    });
+  });
+}
+
+document.getElementById("search-btn").addEventListener("click", ()=>{
+  currentFilter = document.getElementById("kategorie").value;
+  dateFilter = document.getElementById("datum").value;
+  renderBoard();
+});
+document.getElementById("datum").addEventListener("keydown", e=>{
+  if(e.key==="Enter"){ e.preventDefault(); document.getElementById("search-btn").click(); }
+});
+document.getElementById("reset-btn").addEventListener("click", (e)=>{
+  const btn = e.target;
+  if(btn.dataset.armed !== "1"){
+    btn.dataset.armed = "1";
+    btn.textContent = "Wirklich? Nochmal klicken zum Bestätigen";
+    clearTimeout(btn._armTimer);
+    btn._armTimer = setTimeout(()=>{
+      btn.dataset.armed = "0";
+      btn.textContent = "Fortschritt zurücksetzen";
+    }, 4000);
+    return;
+  }
+  btn.dataset.armed = "0";
+  btn.textContent = "Fortschritt zurücksetzen";
+  completion = {};
+  buildInitialSchedule();
+  saveState();
+  renderStats();
+  renderBoard();
+});
+
+loadState().then(()=>{ renderStats(); renderBoard(); });
+
+["nav-fahrplan","nav-fortschritt","nav-cefr"].forEach(id=>{
+  const el = document.getElementById(id);
+  if(!el) return;
+  el.addEventListener("click", e=>{
+    e.preventDefault();
+    const target = document.getElementById(el.getAttribute("href").slice(1));
+    if(target) target.scrollIntoView({behavior:"smooth", block:"start"});
+  });
+});
+</script>
+</body>
+</html>
